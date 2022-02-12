@@ -9,7 +9,27 @@
 </head>
 <body>
 
-    <div class="container" id="root">
+    <div id="root">
+        <header>
+            <nav class="navbar">
+                <h1>To Do List</h1>
+            </nav>
+        </header>
+
+        <main class="container">
+
+            <input type="text" v-model="newToDo">
+            <button>Aggiungi</button>
+
+            <div>
+                <ul>
+                    <li v-for="item in ToDo" v-if="item.done"> 
+                        {{item.text}}
+                    </li>
+                </ul>
+            </div>
+
+        </main>
 
     </div>
     
