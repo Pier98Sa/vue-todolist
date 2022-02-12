@@ -11,12 +11,16 @@ body{
 header .navbar{
     background-color: #f7f9fc;
     color: #102540;
-    text-align: center;
-}
-
-.navbar h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
 }
+
+header h1{
+    margin-left: 10px;
+}
+
 
 /*Main*/
 
@@ -56,6 +60,10 @@ main .list ul{
     padding: 30px;
 }
 
+.empty-title{
+    padding: 30px;
+    
+}
 /*list item*/
 main .list li{
     padding: 10px;
@@ -71,7 +79,13 @@ main .list li{
     justify-content: space-between;
     align-items: center;
 }
-
+.list span,
+.list .list-item i{
+    cursor: pointer;
+}
+.lineThrough {
+    text-decoration: line-through;
+}
 /*list i*/
 .list .list-item i:hover{
     color: #f00;

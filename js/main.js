@@ -6,22 +6,22 @@ const vue = new Vue (
             ToDo: [
                 {
                     text: 'Fare Colazione',
-                    done: true
+                    done: false
                 },
 
                 {
                     text: 'Consultare la documentazione',
-                    done: true
+                    done: false
                 },
 
                 {
                     text: 'Programmare',
-                    done: true
+                    done: false
                 },
 
                 {
                     text: 'Pranzare',
-                    done: true
+                    done: false
                 }
             ],
 
@@ -33,7 +33,7 @@ const vue = new Vue (
                 if(this.newToDo == ''){
                     alert('Non hai inserito nessun nuovo to do')
                 }else{
-                    this.ToDo.push({"text": this.newToDo, "done": true});
+                    this.ToDo.push({"text": this.newToDo, "done": false});
                 }
                 
                 this.newToDo = '';
@@ -42,9 +42,19 @@ const vue = new Vue (
             //funzione per rimuovere il to do dalla lista
 
             removeToDo(index) {
-               this.ToDo[index].done = false;
-            }
+               this.ToDo.splice(index,1);
+            },
 
+            //funzione per barrare al click
+            lineThrough(index) {
+
+                if (this.ToDo[index].done == true){
+                    this.ToDo[index].done = false;
+                }else{
+                    this.ToDo[index].done = true;
+                }
+               
+            }
         }
     }
 );
