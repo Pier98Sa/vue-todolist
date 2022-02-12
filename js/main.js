@@ -21,12 +21,23 @@ const vue = new Vue (
 
                 {
                     text: 'Pranzare',
-                    done: false
+                    done: true
                 }
             ],
 
         },
         methods:{
+            //funzione per aggiungere un object tramite l'input
+            addToDo() {
+                
+                if(this.newToDo == ''){
+                    alert('Non hai inserito nessun nuovo to do')
+                }else{
+                    this.ToDo.push({"text": this.newToDo, "done": true});
+                }
+                
+                this.newToDo = '';
+            }
 
         }
     }
