@@ -31,7 +31,7 @@ const vue = new Vue (
             addToDo() {
 
                 if(this.newToDo == ''){
-                    alert('Non hai inserito nessun nuovo to do')
+                    alert('Non hai inserito nessun nuovo to do');
                 }else{
                     this.ToDo.push({"text": this.newToDo, "done": false});
                 }
@@ -40,12 +40,11 @@ const vue = new Vue (
             },
 
             //funzione per rimuovere il to do dalla lista
-
             removeToDo(index) {
                this.ToDo.splice(index,1);
             },
 
-            //funzione per barrare al click
+            //funzione per barrare al click e con un secondo click eliminarlo
             lineThrough(index) {
 
                 if (this.ToDo[index].done == true){
