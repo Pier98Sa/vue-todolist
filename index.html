@@ -27,9 +27,9 @@
 
             <div class="list">
                 <ul>
-                    <li class="list-item" v-for="item in ToDo" v-if="item.done"> 
+                    <li class="list-item" v-for="(item, index) in ToDo" v-if="item.done"> 
                         {{item.text}}
-                        <i class="fa-solid fa-xmark"></i>
+                        <i @click = "removeToDo(index)" class="fa-solid fa-xmark"></i>
                     </li>
                 </ul>
             </div>
