@@ -28,12 +28,13 @@ const vue = new Vue (
         },
         methods:{
             //funzione per aggiungere un object tramite l'input
+            //aggiunta la funzione trim per eliminare gli spazi in più, prima e dopo ogni stringa
             addToDo() {
 
-                if(this.newToDo == ''){
+                if(this.newToDo.trim() == ''){
                     alert('Non hai inserito nessun nuovo to do');
                 }else{
-                    this.ToDo.push({"text": this.newToDo, "done": false});
+                    this.ToDo.push({"text": this.newToDo.trim(), "done": false});
                 }
                 
                 this.newToDo = '';
